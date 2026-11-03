@@ -1,6 +1,6 @@
 {
-  "version": "1.4.0",
-  "code": 32,
-  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v1.4.0/moneka.apk",
-  "notes": "Recettes illustrées, un seul bouton Partager, liste des courses repliée, connexion d'abord, et plusieurs corrections."
+  "version": "1.4.2",
+  "code": 38,
+  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v1.4.2/moneka.apk",
+  "notes": "Prénom enregistré, rappels à l'heure exacte, geste Retour d'Android, Budget sur petits écrans, mises à jour dans l'appli."
 }
