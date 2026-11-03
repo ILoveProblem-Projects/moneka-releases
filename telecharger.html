@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Télécharger Moneka</title>
+<meta name="description" content="Moneka : note tes dépenses en quelques secondes, même hors connexion. Application Android gratuite.">
+<meta property="og:title" content="Moneka">
+<meta property="og:description" content="Note tes dépenses en quelques secondes, même hors connexion. Gratuit.">
+<meta name="theme-color" content="#0E8C8C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='116' fill='%230E8C8C'/%3E%3Crect x='118' y='110' width='276' height='300' rx='34' fill='%23FFFDF6'/%3E%3C/svg%3E">
+<style>
+  :root { --bg:#F3F7F6; --card:#fff; --ink:#0E2A30; --muted:#5B6B6E; --accent:#0E8C8C; --accent-d:#0A7373; --soft:#E3F2F0; --gold:#F5B83D; --line:#E2ECEA; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0F1B1D; --card:#172629; --ink:#E8F1EF; --muted:#9DB0AE; --soft:#1F3437; --line:#26393C; } }
+  * { box-sizing:border-box }
+  body { margin:0; min-height:100vh; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding:24px 16px 40px }
+  main { width:100%; max-width:440px; margin:0 auto }
+  .hero { text-align:center; padding:12px 0 8px }
+  .hero svg { width:96px; height:96px; border-radius:24px; box-shadow:0 14px 40px rgb(14 140 140 / .3) }
+  h1 { font-size:30px; margin:14px 0 2px; letter-spacing:-.01em }
+  .pitch { color:var(--muted); margin:0 auto 18px; max-width:340px }
+  .card { background:var(--card); border-radius:22px; padding:20px; box-shadow:0 6px 30px rgba(14,42,48,.08); margin-top:14px }
+  .btn { display:flex; align-items:center; justify-content:center; gap:10px; width:100%; font:inherit; font-size:18px; font-weight:800; color:#fff; background:var(--accent);
+         border:0; border-radius:16px; padding:16px; cursor:pointer; text-decoration:none }
+  .btn:active { transform:scale(.98) }
+  .btn.ghost { background:transparent; color:var(--accent-d); font-size:15px; padding:10px; font-weight:700 }
+  .meta { text-align:center; color:var(--muted); font-size:13.5px; margin:10px 0 0 }
+  .done { display:flex; gap:12px; align-items:flex-start; background:var(--soft); border-radius:16px; padding:14px; margin-bottom:12px }
+  .done .big { font-size:30px; line-height:1 }
+  .done b { display:block; font-size:17px }
+  h2 { font-size:18px; margin:0 0 12px; display:flex; align-items:center; gap:8px }
+  ol { list-style:none; counter-reset:s; margin:0; padding:0; display:grid; gap:14px }
+  ol li { counter-increment:s; display:grid; grid-template-columns:32px 1fr; gap:12px; align-items:start }
+  ol li::before { content:counter(s); display:grid; place-items:center; width:32px; height:32px; border-radius:50%; background:var(--accent); color:#fff; font-weight:800 }
+  .feats { display:grid; grid-template-columns:1fr 1fr; gap:10px }
+  .feat { background:var(--soft); border-radius:14px; padding:12px; font-size:14px }
+  .feat span { font-size:22px; display:block; margin-bottom:4px }
+  .note { color:var(--muted); font-size:13.5px; margin:12px 0 0 }
+  footer { text-align:center; color:var(--muted); font-size:13px; margin-top:22px }
+  footer a { color:var(--accent-d) }
+  [hidden] { display:none !important }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+    <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="116" fill="#0E8C8C"/><rect x="118" y="110" width="276" height="300" rx="34" fill="#FFFDF6"/><path d="M150 170h212M150 214h212M150 258h212M150 302h212M150 346h140" stroke="#F3E3B5" stroke-width="8" stroke-linecap="round"/><path d="M160 330c10-60 22-104 36-104 18 0 14 92 34 92 22 0 18-92 40-92 18 0 22 70 30 104" fill="none" stroke="#0B2530" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/><path d="M330 352l60-60 26 26-60 60-34 8z" fill="#F5B83D"/><path d="M330 352l-8 34 34-8z" fill="#0B2530"/></svg>
+    <h1>Moneka</h1>
+        <p class="pitch">Note tes dépenses en quelques secondes, même sans Internet. Gratuit, pour Android.</p>
+  </div>
+
+  <div class="card">
+    <!-- Avant le téléchargement -->
+    <div id="before">
+      <a class="btn" id="dl" href="https://github.com/ILoveProblem-Projects/moneka-releases/releases/latest/download/moneka.apk" download="moneka.apk">⬇️ Télécharger Moneka</a>
+      <p class="meta" id="meta">Application Android · environ 5 Mo</p>
+    </div>
+    <!-- Après avoir touché « Télécharger » : la page reste ici, rien ne se retélécharge tout seul -->
+    <div id="after" hidden>
+      <div class="done"><span class="big">✅</span><div><b>Le téléchargement a commencé</b>Suis les étapes ci-dessous pour installer.</div></div>
+      <a class="btn ghost" id="again" href="https://github.com/ILoveProblem-Projects/moneka-releases/releases/latest/download/moneka.apk" download="moneka.apk">Le téléchargement n'a pas marché ? Réessayer</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📲 Comment installer</h2>
+    <ol>
+      <li><div>Touche <b>« Télécharger Moneka »</b> et attends la fin (quelques secondes).</div></li>
+      <li><div>Ouvre le fichier <b>moneka.apk</b> : touche la notification, ou va dans <b>Téléchargements</b>.</div></li>
+      <li><div>Si Android demande, touche <b>Paramètres</b> puis active <b>« Autoriser cette source »</b>, et reviens.</div></li>
+      <li><div>Touche <b>Installer</b>, puis <b>Ouvrir</b>. C'est prêt !</div></li>
+    </ol>
+    <p class="note">Tu as déjà Moneka ? Installe par-dessus : <b>tes dépenses sont gardées</b>. Ensuite, les mises à jour se font directement dans l'appli.</p>
+  </div>
+
+  <div class="card">
+    <h2>✨ Ce que fait Moneka</h2>
+    <div class="feats">
+      <div class="feat"><span>✍️</span>Noter une dépense en une ligne</div>
+      <div class="feat"><span>📊</span>Voir où part ton argent</div>
+      <div class="feat"><span>🍲</span>Idées de laoka selon ton budget</div>
+      <div class="feat"><span>🔔</span>Petits rappels, même appli fermée</div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="confidentialite.html">Confidentialité</a> · moneka.support@gmail.com
+  </footer>
+</main>
+<script>
+  // Version et nouveautés lues dans version.json (même dépôt). Sans Internet : la page marche quand même.
+  fetch("version.json?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(v => {
+    if (v && typeof v.version === "string") document.getElementById("meta").textContent = "Version " + v.version.slice(0, 12) + " · Android · environ 5 Mo";
+  }).catch(() => {});
+  // Après le clic : on montre les étapes ; un 2e clic accidentel ne relance pas un 2e téléchargement tout de suite.
+  const dl = document.getElementById("dl"), again = document.getElementById("again");
+  let last = 0;
+  function started(e) {
+    const now = Date.now();
+    if (now - last < 15000) { e.preventDefault(); return; }
+    last = now;
+    document.getElementById("before").hidden = true;
+    document.getElementById("after").hidden = false;
+  }
+  dl.addEventListener("click", started);
+  again.addEventListener("click", started);
+</script>
+</body>
+</html>
