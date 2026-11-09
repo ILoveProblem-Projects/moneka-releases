@@ -1,6 +1,6 @@
 {
-  "version": "3.0.0",
-  "code": 45,
-  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.0.0/moneka.apk",
-  "notes": "Moneka 3 : toute l'appli refaite selon la maquette (51 écrans), compte corrigé, suppression du compte avec Google, Tout effacer sans compte."
+  "version": "3.1.0",
+  "code": 46,
+  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.1.0/moneka.apk",
+  "notes": "Empreinte digitale, 8 avatars et ta photo, clavier Moneka sur tous les montants, idées de laoka selon ton budget, choix de garder tes notes à la connexion."
 }
