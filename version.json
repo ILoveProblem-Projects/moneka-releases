@@ -1,6 +1,6 @@
 {
-  "version": "2.0.0",
-  "code": 44,
-  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v2.0.0/moneka.apk",
-  "notes": "Moneka 2 : un seul chiffre « tu peux encore dépenser », noter en deux touches, 7 thèmes, connexion Google, payer loyer ou écolage d'avance."
+  "version": "3.0.0",
+  "code": 45,
+  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.0.0/moneka.apk",
+  "notes": "Moneka 3 : toute l'appli refaite selon la maquette (51 écrans), compte corrigé, suppression du compte avec Google, Tout effacer sans compte."
 }
