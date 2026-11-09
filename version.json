@@ -1,6 +1,6 @@
 {
-  "version": "3.1.1",
-  "code": 47,
-  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.1.1/moneka.apk",
-  "notes": "Un œil pour cacher ou montrer les montants, l'empreinte pour les voir, fenêtre Bienvenue pour tous les nouveaux comptes, photo de profil touchable, corrections."
+  "version": "3.1.2",
+  "code": 48,
+  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.1.2/moneka.apk",
+  "notes": "Le bouton « Ouvrir Moneka » de la page de confirmation te connecte directement, même si l'appli était fermée."
 }
