@@ -3,35 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F5F3FC">
 <title>Moneka</title>
+<link rel="icon" href="img/moneka.svg">
 <style>
-  :root { --bg:#F5F3FC; --card:#fff; --ink:#1E1640; --muted:#5A5470; --accent:#6B3BEF; --err:#B42318; }
+  @font-face { font-family:"Figtree"; src:url("fonts/figtree.woff2") format("woff2"); font-weight:300 900; font-display:swap }
+  @font-face { font-family:"Bricolage Grotesque"; src:url("fonts/bricolage.woff2") format("woff2"); font-weight:200 800; font-display:swap }
+  :root { --bg:#F5F3FC; --paper:#fff; --ink:#17142A; --muted:#5F5B74; --line:#E6E2F4; --accent:#6B3BEF; --soft:#ECE4FE; --err:#B42318; --ok:#6B3BEF }
+  @media (prefers-color-scheme: dark) { :root { --bg:#101114; --paper:#1B1C21; --ink:#F2F2F5; --muted:#9497A9; --line:#2A2B33; --accent:#8B5CF6; --soft:#2A2340; --err:#F97066 } }
   * { box-sizing:border-box }
-  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--bg); color:var(--ink);
-         font:16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; padding:16px }
-  main { width:100%; max-width:420px; background:var(--card); border-radius:20px; padding:28px 24px; box-shadow:0 6px 30px rgba(30,22,64,.08) }
-  .ic { font-size:52px; line-height:1 }
-  h1 { font-size:24px; margin:14px 0 8px }
-  p { color:var(--muted); margin:0 0 12px }
-  label { display:block; font-weight:600; margin:14px 0 6px }
-  input { width:100%; font:inherit; padding:12px 14px; border:1px solid #E4DEF5; border-radius:12px }
-  button { width:100%; margin-top:18px; font:inherit; font-weight:700; color:#fff; background:var(--accent); border:0; border-radius:14px; padding:14px; cursor:pointer }
-  .err { color:var(--err) } .en { font-size:14px; border-top:1px solid #E4DEF5; padding-top:12px; margin-top:16px }
+  body { margin:0; min-height:100vh; display:flex; flex-direction:column; align-items:center; background:var(--bg); color:var(--ink);
+         font:16px/1.5 "Figtree", system-ui, sans-serif; -webkit-font-smoothing:antialiased; padding:28px 18px 32px }
+  .brand { display:flex; align-items:center; gap:10px; font:800 22px/1 "Bricolage Grotesque", "Figtree", sans-serif; letter-spacing:-.01em; margin:0 0 26px; color:var(--ink); text-decoration:none }
+  .brand img { width:40px; height:40px; border-radius:11px }
+  main { width:100%; max-width:440px; background:var(--paper); border:1.5px solid var(--line); border-radius:20px; padding:26px 22px 22px }
+  .ic { width:64px; height:64px; border-radius:20px; background:var(--soft); color:var(--accent); display:flex; align-items:center; justify-content:center }
+  .ic svg { width:34px; height:34px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round }
+  h1 { font:800 27px/1.15 "Bricolage Grotesque", "Figtree", sans-serif; letter-spacing:-.01em; margin:18px 0 8px }
+  p { color:var(--muted); margin:0 0 12px; font-size:16.5px }
+  b { color:var(--ink) }
+  label { display:block; font-weight:700; margin:14px 0 6px }
+  input { width:100%; font:inherit; color:var(--ink); background:var(--paper); padding:13px 14px; border:1.5px solid var(--line); border-radius:14px; outline:none }
+  input:focus { border-color:var(--accent) }
+  button, .btn { display:flex; align-items:center; justify-content:center; width:100%; min-height:54px; margin-top:20px; font:700 17px "Figtree", sans-serif;
+         color:#fff; background:var(--accent); border:0; border-radius:14px; padding:0 16px; cursor:pointer; text-decoration:none; transition:transform .12s }
+  button:active, .btn:active { transform:scale(.98) }
+  button[disabled] { opacity:.55 }
+  .help { background:var(--bg); border-radius:14px; padding:12px 14px; margin:16px 0 0; font-size:14.5px }
+  .help p { font-size:14.5px; margin:0 }
+  .err { color:var(--err) }
+  .en { font-size:14px; border-top:1.5px solid var(--line); padding-top:14px; margin:18px 0 0 }
+  footer { margin-top:22px; color:var(--muted); font-size:13px; text-align:center }
+  footer a { color:var(--accent) }
   [hidden] { display:none !important }
 </style>
 </head>
 <body>
+<a class="brand" href="./"><img src="img/moneka.svg" alt="">Moneka</a>
 <main>
   <!-- Compte confirmé -->
   <section id="ok" hidden>
-    <div class="ic">✅</div>
+    <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
     <h1>Ton compte est confirmé</h1>
-    <p>Retourne dans l'appli Moneka et connecte-toi avec ton e-mail et ton mot de passe : <b>onglet Moi › Compte et sauvegarde › J'ai déjà un compte</b>.</p>
-    <p class="en">Your account is confirmed. Go back to the Moneka app and log in with your email and password: <b>Moi (Me) tab › Account › I already have an account</b>.</p>
+    <div id="go" hidden>
+      <p>Touche le bouton : Moneka s'ouvre et tu es connecté directement.</p>
+      <a class="btn" id="open" href="#">Ouvrir Moneka</a>
+      <div class="help"><p>Le bouton ne marche pas ? Ouvre l'appli et connecte-toi avec ton e-mail et ton mot de passe : <b>Moi › Compte et sauvegarde › J'ai déjà un compte</b>.</p></div>
+    </div>
+    <div id="manual">
+      <p>Retourne dans l'appli Moneka et connecte-toi avec ton e-mail et ton mot de passe.</p>
+      <div class="help"><p><b>Moi › Compte et sauvegarde › J'ai déjà un compte</b></p></div>
+    </div>
+    <p class="en">Your account is confirmed. <span id="goen" hidden>Tap <b>Ouvrir Moneka</b> to open the app already logged in, or </span>go back to the Moneka app and log in with your email and password: <b>Moi (Me) › Account › I already have an account</b>.</p>
   </section>
   <!-- Nouveau mot de passe -->
   <form id="reset" hidden>
-    <div class="ic">🔑</div>
+    <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M18 5l2 2"/></svg></div>
     <h1>Nouveau mot de passe</h1>
     <p>Choisis un nouveau mot de passe pour ton compte Moneka (au moins 8 caractères).</p>
     <label for="p1">Nouveau mot de passe</label><input id="p1" type="password" autocomplete="new-password" minlength="8" required>
@@ -40,19 +67,20 @@
     <button type="submit" id="rbtn">Enregistrer</button>
   </form>
   <section id="done" hidden>
-    <div class="ic">✅</div>
+    <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
     <h1>Mot de passe changé</h1>
     <p>Retourne dans l'appli Moneka et connecte-toi avec ton nouveau mot de passe.</p>
     <p class="en">Password changed. Go back to the Moneka app and log in with your new password.</p>
   </section>
   <!-- Lien expiré ou déjà utilisé -->
   <section id="bad" hidden>
-    <div class="ic">⏳</div>
+    <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
     <h1>Ce lien ne marche plus</h1>
     <p id="badmsg">Il a peut-être déjà été utilisé ou il a expiré. Si tu as déjà confirmé ton compte, connecte-toi simplement dans l'appli.</p>
     <p class="en">This link has expired or was already used. If your account is already confirmed, just log in from the app.</p>
   </section>
 </main>
+<footer>Moneka · carnet de budget · <a href="mailto:moneka.support@gmail.com">moneka.support@gmail.com</a></footer>
 <script type="module">
   // Clé publique (anon / publishable) : faite pour être dans une page web, comme dans l'appli.
   const URL = "https://eafhyimtmsszrazruboe.supabase.co";
@@ -78,7 +106,16 @@
       if (error) { btn.disabled = false; btn.textContent = "Enregistrer"; return fail("Impossible de changer le mot de passe. Redemande un lien depuis l'appli."); }
       document.getElementById("reset").hidden = true; show("done");
     });
-  } else { history.replaceState(null, "", location.pathname); show("ok"); }
+  } else {
+    // Le lien de confirmation apporte de quoi ouvrir la session : on le passe à l'appli (même lien que la connexion Google).
+    // Seulement sur Android : sur ordinateur ou iPhone, l'appli n'est pas là, on garde les instructions.
+    const at = h.get("access_token"), rt = h.get("refresh_token");
+    if (at && rt && /Android/i.test(navigator.userAgent)) {
+      document.getElementById("open").href = "mg.moneka.app://auth#" + new URLSearchParams({ access_token: at, refresh_token: rt, type: "signup" });
+      show("go"); show("goen"); document.getElementById("manual").hidden = true;
+    }
+    history.replaceState(null, "", location.pathname); show("ok");
+  }
 </script>
 </body>
 </html>
