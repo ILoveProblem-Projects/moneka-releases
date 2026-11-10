@@ -1,6 +1,6 @@
 {
-  "version": "3.2.0",
-  "code": 49,
-  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.2.0/moneka.apk",
-  "notes": "Les prêts se rendent petit à petit : note chaque partie rendue, vois ce qui reste et le total de ce qu'on te doit et de ce que tu dois."
+  "version": "3.2.2",
+  "code": 52,
+  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.2.2/moneka.apk",
+  "notes": "Corrigé : la demande des notifications ne revient plus en boucle. Clavier mieux adapté à tous les écrans. Plus : idées de laoka avec photos en bonus, export Excel, fiche laoka à imprimer."
 }
