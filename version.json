@@ -1,6 +1,6 @@
 {
-  "version": "3.1.2",
-  "code": 48,
-  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.1.2/moneka.apk",
-  "notes": "Le bouton « Ouvrir Moneka » de la page de confirmation te connecte directement, même si l'appli était fermée."
+  "version": "3.2.0",
+  "code": 49,
+  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.2.0/moneka.apk",
+  "notes": "Les prêts se rendent petit à petit : note chaque partie rendue, vois ce qui reste et le total de ce qu'on te doit et de ce que tu dois."
 }
