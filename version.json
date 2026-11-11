@@ -1,6 +1,6 @@
 {
-  "version": "3.2.2",
-  "code": 52,
-  "apk": "https://github.com/ILoveProblem-Projects/moneka-releases/releases/download/v3.2.2/moneka.apk",
-  "notes": "Corrigé : la demande des notifications ne revient plus en boucle. Clavier mieux adapté à tous les écrans. Plus : idées de laoka avec photos en bonus, export Excel, fiche laoka à imprimer."
+  "version": "4.0.0",
+  "code": 54,
+  "apk": "https://moneka.app/apk/moneka-4.0.0.apk",
+  "notes": "Moneka 4 : le chiffre du jour part de l'argent que tu as vraiment, s'explique d'un toucher et suit ton rythme (salaire, semaine, chaque jour). Gros achat sur plusieurs jours, dépassement en orange, Bilan reçu sur prévu. Nouvel onglet Moi, coller un montant depuis un SMS, Noter plus simple. Plus rapide et plus sûr."
 }
